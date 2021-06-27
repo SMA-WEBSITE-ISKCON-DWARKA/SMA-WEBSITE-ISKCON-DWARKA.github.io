@@ -1,0 +1,36 @@
+<div class="row">
+  <div class="col-md-3"></div>
+  <div class="col-md-6" style="text-align: center">
+<!--    <span>{{phoneNumber}}</span>-->
+<!--    <div>-->
+<!--      <label for="country">Country</label>-->
+<!--      <input type="text" id="country"/>-->
+<!--    </div>-->
+    <div>
+      <label for="number">Phone Number</label>
+      <input [(ngModel)]="phoneNumber"
+        type="text" id="number"/>
+    </div>
+    <div>
+      <button [ngStyle]="{display : userExist ? 'none' : 'inline'}"
+        (click)="checkUser()"
+        class="btn-primary"
+      >Log In</button>
+    </div>
+    <div>
+      <button [ngStyle]="{display :  userExist ? 'inline' : 'none'}"
+        #SIGN_IN_FB
+        (click)="login()"
+        class="btn-primary"
+        id="SIGN_IN"
+      >Log In</button>
+    </div>
+    <div *ngIf="signInResult">
+      <input [(ngModel)]="enteredCode"> | <button [disabled]="enteredCode.length === 0" (click)="checkCode()">Confirm code</button>
+    </div>
+  </div>
+  <div class="col-md-3"></div>
+</div>
+<ng-template #FIREBASELOGIN>
+
+</ng-template>
