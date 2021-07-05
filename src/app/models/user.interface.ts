@@ -4,7 +4,6 @@ export interface RegisterUser {
 }
 
 export interface UserCreatedResponse {
-
   userId: string;
   firebaseId: string;
   email: string;

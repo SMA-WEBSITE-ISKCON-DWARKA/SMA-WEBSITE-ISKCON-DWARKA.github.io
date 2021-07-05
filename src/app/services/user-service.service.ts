@@ -13,10 +13,14 @@ export class UserServiceService {
   }
 
   checkUser(phoneNumber: string): Observable<any> {
-    return this.httpClient.get<Observable<any>>(`${environment.backendUl}/checkUser/${phoneNumber}`);
+    return this.httpClient.get<Observable<any>>(`${environment.backendUl}/users/checkUser/${phoneNumber}`);
   }
 
   registerUser(regUserRequest: RegisterUser): Observable<UserCreatedResponse> {
     return this.httpClient.post<UserCreatedResponse>(`${environment.backendUl}/register`, regUserRequest);
+  }
+
+  getUserUsingFirebaseId(firebaseId: string): Observable<UserCreatedResponse> {
+    return this.httpClient.get<UserCreatedResponse>(`${environment.backendUl}/users/firebaseId/${firebaseId}`);
   }
 }

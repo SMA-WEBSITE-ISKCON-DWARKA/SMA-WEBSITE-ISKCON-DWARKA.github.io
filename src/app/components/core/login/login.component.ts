@@ -63,13 +63,17 @@ export class LoginComponent implements OnInit {
               console.log('Error occurred registering the user');
             });
         } else {
-          console.log('Came in else');
           /**
            * Now here user could be logging on a new device
            * Or using the exising device
            * if a new device is there, remove the previous device from backend
            * if existing device
            */
+          this.userService.getUserUsingFirebaseId(result.user.uid)
+            .subscribe((res) => {
+              localStorage.setItem('sma_user', JSON.stringify(res));
+              this.router.navigate(['/dashboard']);
+            });
         }
         // ...
       }).catch((error) => {

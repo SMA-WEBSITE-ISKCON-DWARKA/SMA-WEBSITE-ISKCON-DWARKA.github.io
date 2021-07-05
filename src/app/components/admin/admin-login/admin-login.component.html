@@ -1,0 +1,27 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-3">
+
+    </div>
+    <div class="col-md-6" style="text-align: center; padding: 3vw;">
+      <form class="example-form">
+        <mat-form-field class="admin-login-form" appearance="fill">
+          <mat-label>Username</mat-label>
+          <input matInput [(ngModel)]="username" maxlength="20" name="username" placeholder="Enter username">
+          <mat-hint align="end">{{username ? username.length : 0}} / 20</mat-hint>
+        </mat-form-field>
+        <mat-form-field class="admin-login-form" appearance="fill">
+          <mat-label>Password</mat-label>
+          <input matInput [(ngModel)]="password" type="password" maxlength="20" name="password" placeholder="Enter password">
+          <mat-hint align="end">{{password ? password.length : 0}} / 20</mat-hint>
+        </mat-form-field>
+      </form>
+
+      <button class="btn btn-primary" (click)="login()">Login</button>
+
+    </div>
+    <div class="col-md-3">
+
+    </div>
+  </div>
+</div>
